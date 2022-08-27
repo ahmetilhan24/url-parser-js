@@ -5,7 +5,7 @@
   "repository": "https://github.com/ahmetilhan24/url-parser-js.git",
   "author": "Ahmet ilhan <ahmetilhan.dev@gmail.com>",
   "scripts": {
-    "dev": "nodemon --watch 'src/*.ts' --exec 'ts-node' src/index.ts "
+    "dev": "nodemon --watch 'src/*.ts' --exec 'ts-node' src/index.ts"
   },
   "license": "MIT",
   "devDependencies": {
