@@ -7,7 +7,7 @@ class UrlParser {
       this.url = new URL(window.location.href);
       this.init();
     } else {
-      this.url = new URL("https://www.example.com/parameter");
+      this.url = new URL("https://www.example.com:3000/parameter");
       //console.error("window is not defined");
     }
   }
@@ -36,8 +36,11 @@ class UrlParser {
     }
     return hostname;
   }
+  public getPort(): number {
+    return Number(this.url.port);
+  }
 }
 
 const urlParser = new UrlParser();
 
-console.group(urlParser.getHostname());
+console.group(urlParser.getPort());
