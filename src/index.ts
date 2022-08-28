@@ -7,7 +7,7 @@ class UrlParser {
       this.url = new URL(window.location.href);
       this.init();
     } else {
-      this.url = new URL("https://www.example.com:3000/parameter");
+      this.url = new URL("https://www.example.com:3000/parameter#test");
       //console.error("window is not defined");
     }
   }
@@ -25,22 +25,31 @@ class UrlParser {
   public getHostname(): string {
     let hostname: string = this.url.hostname;
     //for started www
-    if (hostname.startsWith("www")) {
-      hostname =
-        this.url.hostname.split(".")[1] + "." + this.url.hostname.split(".")[2];
-    }
-    // for subdomain
-    if (hostname.split(".").length === 3) {
-      hostname =
-        this.url.hostname.split(".")[1] + "." + this.url.hostname.split(".")[2];
+    if (this.url.port) {
+      hostname = hostname.split(":")[0];
     }
     return hostname;
   }
   public getPort(): number {
     return Number(this.url.port);
   }
+  public getPathname(): string {
+    return this.url.pathname;
+  }
+  public getQueries(): string[] {
+    return this.url.search.split("?")[1].split("&");
+  }
+  public getHashes(): string[] {
+    return this.url.hash.split("#").slice(1);
+  }
+  public getHost(): string {
+    return this.url.host;
+  }
+  public getSubdomain(): string {
+    return this.url.hostname.split(".")[0];
+  }
 }
 
 const urlParser = new UrlParser();
 
-console.group(urlParser.getPort());
+console.log(urlParser.getSubdomain());
