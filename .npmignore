@@ -1,3 +1,5 @@
 src/
 node_modules/
 demo/
+tsconfig.json
+tsconfig.tsbuildinfo
