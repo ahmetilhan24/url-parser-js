@@ -1,7 +1,7 @@
 import IURL from "./interfaces/url.interface";
 
 export default class UrlParser {
-  public url: IURL;
+  private url: IURL;
   constructor() {
     if (typeof window !== "undefined") {
       this.url = new URL(window.location.href);
@@ -14,6 +14,9 @@ export default class UrlParser {
   }
   public getProtocol(): string {
     return this.url.protocol.split(":")[0];
+  }
+  public getHost(): string {
+    return this.url.host;
   }
   public getHostname(): string {
     let hostname: string = this.url.hostname;
@@ -30,13 +33,17 @@ export default class UrlParser {
     return this.url.pathname;
   }
   public getQueries(): string[] {
-    return this.url.search.split("?")[1].split("&");
+    return this.url.search.split("?")[1]?.split("&");
+  }
+  public getParams(): string[] {
+    const params = this.url.pathname
+      .split("/")
+      ?.slice(1)
+      .map((param) => "/" + param);
+    return params;
   }
   public getHashes(): string[] {
     return this.url.hash.split("#").slice(1);
-  }
-  public getHost(): string {
-    return this.url.host;
   }
   public getSubdomain(): string {
     return this.url.hostname.split(".")[0];

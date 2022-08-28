@@ -6,7 +6,8 @@
   "author": "Ahmet ilhan <ahmetilhan.dev@gmail.com>",
   "scripts": {
     "dev": "nodemon --watch 'src/*.ts' --exec 'ts-node' src/index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "watch": "tsc --watch"
   },
   "license": "MIT",
   "devDependencies": {
