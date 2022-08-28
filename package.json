@@ -4,6 +4,14 @@
   "main": "dist/index.js",
   "repository": "https://github.com/ahmetilhan24/url-parser-js.git",
   "author": "Ahmet ilhan <ahmetilhan.dev@gmail.com>",
+  "keywords": [
+    "url parser",
+    "javascript url parsing",
+    "parse-url",
+    "url-parse",
+    "url parser package",
+    "url parser for javascript"
+  ],
   "scripts": {
     "dev": "nodemon --watch 'src/*.ts' --exec 'ts-node' src/index.ts",
     "build": "tsc",
