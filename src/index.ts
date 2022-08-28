@@ -7,7 +7,9 @@ class UrlParser {
       this.url = new URL(window.location.href);
       this.init();
     } else {
-      this.url = new URL("https://www.example.com:3000/parameter#test");
+      this.url = new URL(
+        "https://anonymous:flabada@developer.mozilla.org/en-US/docs/Web/API/URL/password"
+      );
       //console.error("window is not defined");
     }
   }
@@ -48,8 +50,23 @@ class UrlParser {
   public getSubdomain(): string {
     return this.url.hostname.split(".")[0];
   }
+  public getHref(): string {
+    return this.url.href;
+  }
+  public getPassword(): string {
+    return this.url.password;
+  }
+  public getUsername(): string {
+    return this.url.username;
+  }
+  public getAuth(): { username: string; password: string } {
+    return {
+      username: this.url.username,
+      password: this.url.password,
+    };
+  }
 }
 
 const urlParser = new UrlParser();
 
-console.log(urlParser.getSubdomain());
+console.log(urlParser.getAuth());
