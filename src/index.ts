@@ -7,9 +7,12 @@ export default class UrlParser {
       this.url = new URL(window.location.href);
     } else {
       this.url = new URL(
-        "https://anonymous:flabada@developer.mozilla.org/en-US/docs/Web/API/URL/password"
+        "https://www.example.com/param1/param2?query1=ball&query2=space"
       );
-      console.error("window is not defined");
+      console.error(
+        "url-parse js package works in browser framework",
+        "window is not defined"
+      );
     }
   }
   public getProtocol(): string {
