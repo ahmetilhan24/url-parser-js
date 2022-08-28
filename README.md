@@ -1,4 +1,4 @@
-# Url Parser JS V1.0.0
+# Url Parser Utils V1.0.0
 
 _**URL parser for javascript**. With this package, you will be able to get all the information about the URL in the browser. This information is presented to you in a disaggregated form. You will not need to put forth any extra effort. 💪💪_
 
