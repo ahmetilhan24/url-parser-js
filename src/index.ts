@@ -36,7 +36,12 @@ export default class UrlParser {
     return this.url.pathname;
   }
   public getQueries(): string[] {
-    return this.url.search.split("?")[1]?.split("&");
+    const isHaveQuery = this.url.search;
+    let queries: string[] = [];
+    if (isHaveQuery) {
+      queries = this.url.search.split("?")[1]?.split("&");
+    }
+    return queries;
   }
   public getParams(): string[] {
     const params = this.url.pathname
