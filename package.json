@@ -1,5 +1,5 @@
 {
-  "name": "url-parser.js",
+  "name": "url-parser-utils",
   "version": "1.0.0",
   "main": "dist/index.js",
   "repository": "https://github.com/ahmetilhan24/url-parser-js.git",
