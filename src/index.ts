@@ -5,20 +5,11 @@ export default class UrlParser {
   constructor() {
     if (typeof window !== "undefined") {
       this.url = new URL(window.location.href);
-      this.init();
     } else {
       this.url = new URL(
         "https://anonymous:flabada@developer.mozilla.org/en-US/docs/Web/API/URL/password"
       );
       console.error("window is not defined");
-    }
-  }
-  init(): void {
-    // @ts-ignore-start
-    if ((process.client || process.browser) && window) {
-      // @ts-ignore-end
-      this.url = window.location.href;
-      console.log("asdasd");
     }
   }
   public getProtocol(): string {
