@@ -1,3 +1,3 @@
 export default interface IQuery {
-  [key: PropertyKey]: any;
+  [key: PropertyKey]: string;
 }
