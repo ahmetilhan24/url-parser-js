@@ -1,5 +1,5 @@
 import IURL from "./interfaces/url.interface";
-
+import IQuery from "./interfaces/query.interface";
 export default class UrlParser {
   private url: IURL;
   constructor() {
@@ -35,11 +35,18 @@ export default class UrlParser {
   public getPathname(): string {
     return this.url.pathname;
   }
-  public getQueries(): string[] {
+  public getQueries(): IQuery {
     const isHaveQuery = this.url.search;
-    let queries: string[] = [];
+    let queries: IQuery = {};
     if (isHaveQuery) {
-      queries = this.url.search.split("?")[1]?.split("&");
+      this.url.search
+        .split("?")[1]
+        ?.split("&")
+        .forEach((query) => {
+          const queryPayload: string[] = query.split("=");
+          queries[queryPayload[0]] = queryPayload[1];
+        });
+      return queries;
     }
     return queries;
   }
