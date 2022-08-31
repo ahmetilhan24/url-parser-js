@@ -1,9 +1,10 @@
 {
   "name": "url-parser-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "repository": "https://github.com/ahmetilhan24/url-parser-js.git",
   "author": "Ahmet ilhan <ahmetilhan.dev@gmail.com>",
+  "description": "Javascript URL parser for all project)",
   "keywords": [
     "url parser",
     "javascript url parsing",
