@@ -13,7 +13,7 @@ _**URL parser for javascript**. With this package, you will be able to get all t
 - `getPort`: Optional port number. (e.g `3000`)
 - `getPathname`: URL path. (e.g `/products`)
 - `getParams`: URL params. (e.g. `["/param1", "/param2"]` || ["/"] => default)
-- `getQueries`: Parsed object containing query string, unless parsing is set to false. (e.g `["query1=2", "query2=2"]`)
+- `getQueries`: Parsed object containing query string, unless parsing is set to false. (e.g `{page: 1, limit: 10, q: "search value"}`)
 - `getHashes`: The "fragment" portion of the URL including the pound-sign (e.g.`["hash1"]`).
 - `getHref`: The full URL. (e.g. `http://localhost:8080/ankara?query1=1&test=2#test`)
 - `getSubdomain`: Get subdomain. (e.g. `beta`)
